@@ -107,3 +107,6 @@ const deleteTask = (e) => {
   data.splice(e.parentElement.parentElement.id, 1);
   localStorage.setItem("data", JSON.stringify(data));
 };
+
+
+
