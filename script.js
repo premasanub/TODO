@@ -63,15 +63,31 @@ const createTask = () => {
                 <span class="fw-bolder">${ele.date}</span>
                 <p class="fw-bold">${ele.task}</p>
                 <span class="options">
-                  <i class="fa-solid fa-pen-to-square fa-beat" style="color: #FFD43B;"></i>
-                  <i class="fa-solid fa-trash-can fa-shake" style="color: #FFD43B;"></i>
                   <i onclick="editTask(this)" data-bs-toggle="modal"  data-bs-target ="#form" class="fa-solid fa-pen-to-square fa-beat" style="color: #FFD43B;"></i>
                   <i  onclick="deleteTask(this); createTask()" class="fa-solid fa-trash-can fa-shake" style="color: #FFD43B;"></i>
                 </span>
             </div>
             
-@@ -86,5 +86,20 @@
+            `);
+  });
+  resetForm();
 };
+
+//! resetting the form after displaying the task
+
+const resetForm = () => {
+  textInput.value = "";
+  dateInput.value = "";
+  textarea.value = "";
+};
+
+() => {
+  data = JSON.parse(localStorage.getItem("data") || []);
+};
+(()=>{
+  data = JSON.parse(localStorage.getItem("data")) || []
+  createTask();
+}) ();
 
 //! Edit function for created TODO'S
 const editTask = (e) => {
